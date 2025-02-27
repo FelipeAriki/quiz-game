@@ -1,26 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <ScoreBoardComposition :user-count="userCount " :computer-count="computerCount"/>
+  <QuestionsBoardComposition @updateScores="handleScoresUpdate" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import ScoreBoard from '@/components/ScoreBoard.vue';
+//import QuestionsBoard from '@/components/QuestionsBoard.vue';
+import ScoreBoardComposition from '@/components/ScoreBoardComposition.vue';
+import QuestionsBoardComposition from '@/components/QuestionsBoardComposition.vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components:{
+    //ScoreBoard,
+    //QuestionsBoardComposition
+    ScoreBoardComposition,
+    QuestionsBoardComposition
+  },
+  data() {
+    return {
+      userCount: 0,
+      computerCount: 0
+    };
+  },
+  methods: {
+    handleScoresUpdate(newScores) {
+      this.userCount = newScores.userCount;
+      this.computerCount = newScores.computerCount;
+    }
   }
 }
 </script>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
