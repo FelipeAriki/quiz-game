@@ -1,4 +1,4 @@
-# quiz-game
+# Quiz-Game desenvolvido em Vue visando aprofundar conhecimentos em duas maneiras de criar componentes. Sendo elas, options e compositions
 
 ## Project setup
 ```
